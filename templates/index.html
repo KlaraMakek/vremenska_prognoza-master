@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vremenska prognoza</title>
+</head>
+<body>
+
+    <h1>Vremenska prognoza</h1>
+
+    <p>Lokacija: {{ data.name }}</p>
+    <p>Trenutno vrijeme: {{ data.weather[0].description }}</p>
+    <p>Temperatura: {{ data.main.temp }} C</p>
+
+    <br>
+    <p>{{ data }}</p>
+
+    
+</body>
+</html>
