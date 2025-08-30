@@ -1,7 +1,6 @@
-
-# Ako nemate flask onda sljedeća naredba u terminalu:
+# If Flask is not installed, run:
 # pip install -r requirements.txt 
-# Ako javlja grešku za requests onda sljedeća naredba u terminalu::
+# If you get an error with requests, run:
 # pip3 install requests 
 
 import json
@@ -13,16 +12,17 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
-
+    # Default city and API setup
     query = "London,UK"
     unit = "metric"
-    api_key = "" #unesite svoj API ključ!
+    api_key = ""  # Insert your API key here
 
-    url = "https://api.openweathermap.org/data/2.5/weather?q={0}&units={1}&appid={2}&lang=HR".format(query, unit, api_key)
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={query}&units={unit}&appid={api_key}&lang=HR"
 
-    data = requests.get(url=url) # GET zahtjev kojeg šaljemo na stranicu open weather
+    response = requests.get(url=url)
+    data = response.json()
 
-    return render_template("index.html", data=data.json())
+    return render_template("index.html", data=data)
 
 
 if __name__ == "__main__":
