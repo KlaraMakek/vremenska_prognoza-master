@@ -30,13 +30,13 @@ A simple Flask web application that displays the current weather using the **Ope
 git clone https://github.com/KlaraMakek/vremenska_prognoza-master.git
 cd vremenska_prognoza-master
 
-2.Install dependencies:
+2. Install dependencies:
 pip install -r requirements.txt
 
-3.Add your API key in main.py:
+3. Add your API key in main.py:
 api_key = "your_api_key_here"
 
-4.Run the app:
+4. Run the app:
 python main.py
 
 - Then visit http://localhost:5000
